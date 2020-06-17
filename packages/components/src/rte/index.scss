@@ -1,0 +1,139 @@
+$rte-background: #fff;
+$rte-border: 1px solid #b6b6b6;
+$rte-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+$rte-toolbar-background: linear-gradient(#f5f5f5, #cfd1cf);
+$rte-toolbar-border-bottom: 1px solid #b6b6b6;
+$rte-toolbar-box-shadow: 0 1px 0 #fff inset;
+$rte-toolbar-segment-background: linear-gradient(#fff, #e4e4e4);
+$rte-toolbar-segment-border: 1px solid #a6a6a6;
+$rte-toolbar-segment-border-bottom-color: #979797;
+$rte-toolbar-segment-box-shadow: 1px 0 1px rgba(255, 255, 255, 0.5);
+$rte-toolbar-separator-background: rgba(0, 0, 0, 0.2);
+$rte-toolbar-separator-box-shadow: 1px 0 1px rgba(255, 255, 255, 0.5);
+$rte-toolbar-button-hover-background: #d9d9d9;
+$rte-toolbar-button-on-background: linear-gradient(#aaa, #cacaca);
+$rte-toolbar-button-on-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset,
+  0 1px 0 rgba(0, 0, 0, 0.2);
+$rte-content-border: 1px solid #ddd;
+$rte-content-box-shadow: inset 0px 1px 8px -3px #ababab;
+$rte-content-background: #fefefe;
+$rte-footer-background: linear-gradient(#ebebeb, #cfd1cf);
+$rte-footer-border-top: 1px solid #bfbfbf;
+$rte-footer-box-shadow: 0 1px 0 #fff inset;
+$rte-footer-resizer-color: #666;
+
+.rte {
+  background: $rte-background;
+  width: 100%;
+  display: block;
+  border: $rte-border;
+  padding: 0;
+  margin: 0;
+  box-shadow: $rte-box-shadow;
+
+  &-toolbar {
+    background: $rte-toolbar-background;
+    width: 100%;
+    border-bottom: $rte-toolbar-border-bottom;
+    padding: 6px 8px;
+    white-space: normal;
+    box-shadow: $rte-toolbar-box-shadow;
+  }
+
+  &-toolbar-segment-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+
+  &-toolbar-segment {
+    background: $rte-toolbar-segment-background;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    border: $rte-toolbar-segment-border;
+    border-bottom-color: $rte-toolbar-segment-border-bottom-color;
+    border-radius: 3px;
+    box-shadow: $rte-toolbar-segment-box-shadow;
+  }
+
+  &-toolbar-separator {
+    background: $rte-toolbar-separator-background;
+    margin: 2px 2px;
+    height: 18px;
+    width: 1px;
+    box-shadow: $rte-toolbar-separator-box-shadow;
+  }
+
+  &-toolbar-button {
+    margin: 1px;
+    display: inline-block;
+    padding: 5px 5px;
+    outline: 0;
+    cursor: default;
+  }
+  &-toolbar-button:hover {
+    background: $rte-toolbar-button-hover-background;
+  }
+
+  &-toolbar-button-on,
+  &-toolbar-button-on:hover {
+    background: $rte-toolbar-button-on-background;
+    border-radius: 2px;
+    box-shadow: $rte-toolbar-button-on-box-shadow;
+  }
+  &-toolbar-button-disabled,
+  &-toolbar-button-disabled:hover {
+    background: none;
+  }
+
+  &-toolbar-button-icon {
+    cursor: inherit;
+    position: relative;
+    width: 16px;
+    height: 16px;
+  }
+
+  &-content {
+    padding: 0px;
+    box-sizing: border-box;
+    border: $rte-content-border;
+    cursor: text;
+    border-radius: 0px;
+    box-shadow: $rte-content-box-shadow;
+    background: $rte-content-background;
+    overflow-y: auto;
+  }
+
+  &-footer {
+    background: $rte-footer-background;
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px 8px 2px;
+    position: relative;
+    border-top: $rte-footer-border-top;
+    box-shadow: $rte-footer-box-shadow;
+  }
+
+  &-footer-resizer {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 10px 10px 0 0;
+    border-color: transparent $rte-footer-resizer-color transparent transparent;
+    border-style: dashed solid dashed dashed;
+    font-size: 0;
+    vertical-align: bottom;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    margin-right: -4px;
+    cursor: se-resize;
+  }
+
+  &-editor {
+    padding: 6px 16px;
+  }
+}

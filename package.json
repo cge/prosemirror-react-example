@@ -1,0 +1,66 @@
+{
+  "name": "prosemirror-react-example",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "test-comps": "cross-env CI=true FORCE_COLOR=true lerna --scope pm-comps-lib exec -- yarn test --coverage",
+    "test-comps:update": "cross-env CI=true FORCE_COLOR=true lerna --scope pm-comps-lib exec -- yarn test --updateSnapshot",
+    "test-comps:lint": "cross-env CI=true FORCE_COLOR=true lerna --scope pm-comps-lib exec -- yarn lint",
+    "test-app": "cross-env CI=true FORCE_COLOR=true lerna --scope app1 exec  -- yarn test",
+    "test-app:update": "cross-env CI=true FORCE_COLOR=true lerna --scope app1 exec  -- yarn test --updateSnapshot",
+    "test:update": "yarn run test-app:update && yarn run test-comps:update",
+    "lint": "cross-env FORCE_COLOR=true lerna run lint",
+    "test": "yarn test-app && yarn test-comps",
+    "test-and-lint": "yarn lint && yarn test",
+    "prettier": "cross-env prettier --write packages/**/*.{ts,js,json,scss,css,html}"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/apps/*",
+      "packages/components",
+      "packages/storybook"
+    ],
+    "nohoist": [
+      "**/webpack-dev-server",
+      "**/babel-loader"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "24.7.1",
+    "cross-env": "5.2.0",
+    "husky": "4.2.3",
+    "jest-prop-type-error": "^1.1.0",
+    "lerna": "^3.10.7",
+    "prettier": "^1.16.1"
+  },
+  "dependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-react-app": "^4.0.0",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0"
+  },
+  "resolutions": {
+    "w3c-keyname": "2.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-puush": "yarn run test-and-lint"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "packages/**/*.{js,jsx}",
+      "!**/setupTests.{js,jsx}",
+      "!**/src/index.{js,jsx}",
+      "!**/src/serviceWorker.{js,jsx}",
+      "!**/src/**/*.(spec|test|stories).{js,jsx}"
+    ]
+  }
+}

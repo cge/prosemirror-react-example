@@ -15,9 +15,6 @@
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook"
   },
-  "resolutions": {
-    "w3c-keyname": "2.2.2"
-  },
   "devDependencies": {
     "@storybook/addon-actions": "5.1.9",
     "@storybook/addon-knobs": "5.1.9",

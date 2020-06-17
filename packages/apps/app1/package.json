@@ -19,9 +19,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.js --max-warnings=0 --format=codeframe"
   },
-  "resolutions": {
-    "w3c-keyname": "2.2.2"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },

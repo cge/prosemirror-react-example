@@ -42,9 +42,6 @@
     "react-icons": "3.10.0",
     "spin.js": "^4.1.0"
   },
-  "resolutions": {
-    "w3c-keyname": "2.2.2"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },

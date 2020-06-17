@@ -46,9 +46,6 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0"
   },
-  "resolutions": {
-    "w3c-keyname": "2.2.2"
-  },
   "husky": {
     "hooks": {
       "pre-puush": "yarn run test-and-lint"

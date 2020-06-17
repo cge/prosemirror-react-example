@@ -95,6 +95,11 @@ $rte-footer-resizer-color: #666;
     position: relative;
     width: 16px;
     height: 16px;
+    font-size: 20px;
+
+    > * {
+      margin: -2px 0 0 -2px;
+    }
   }
 
   &-content {

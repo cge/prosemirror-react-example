@@ -1,28 +1,27 @@
 import React, { Component, Fragment } from 'react';
+import { TiArrowBack, TiArrowForward } from 'react-icons/ti';
+import { BsTypeBold } from 'react-icons/bs';
 import {
-  UndoOutlined,
-  RedoOutlined,
-  BoldOutlined,
-  OrderedListOutlined,
-  UnorderedListOutlined,
-  MenuFoldOutlined
-} from '@ant-design/icons';
+  MdFormatListNumbered,
+  MdFormatListBulleted,
+  MdFormatIndentDecrease
+} from 'react-icons/md';
 import clsx from 'clsx';
 
 const getIcon = icon => {
   switch (icon) {
     case 'undo':
-      return <UndoOutlined />;
+      return <TiArrowBack />;
     case 'redo':
-      return <RedoOutlined />;
+      return <TiArrowForward />;
     case 'bold':
-      return <BoldOutlined />;
+      return <BsTypeBold />;
     case 'orderedList':
-      return <OrderedListOutlined />;
+      return <MdFormatListNumbered />;
     case 'unorderedList':
-      return <UnorderedListOutlined />;
+      return <MdFormatListBulleted />;
     case 'outdent':
-      return <MenuFoldOutlined />;
+      return <MdFormatIndentDecrease />;
     default:
       return null;
   }
@@ -52,7 +51,6 @@ class Toolbar extends Component {
           <div
             className={clsx('rte-toolbar-button-icon')}
             style={{
-              fontSize: 16,
               opacity: button.active || button.on ? 1 : 0.3
             }}>
             {getIcon(button.icon)}
